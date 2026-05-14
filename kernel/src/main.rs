@@ -5,15 +5,18 @@
 #![no_std] // 不链接 Rust 标准库
 #![no_main] // 禁用所有 Rust 级别的入口点
 
+use bootloader::{entry_point, BootInfo};
 use core::panic::PanicInfo;
 use lunar_kernel::serial_println;
+
+// 通过宏注册内核入口，bootloader 0.11 要求使用此宏而非裸 _start
+entry_point!(kernel_main);
 
 /// 内核入口点
 ///
 /// 由 bootloader 调用，传入引导信息。
-/// 函数名 `_start` 是链接器约定的入口符号。
-#[no_mangle]
-pub extern "C" fn _start(boot_info: &'static bootloader::BootInfo) -> ! {
+fn kernel_main(boot_info: &'static mut BootInfo) -> ! {
+    let _ = boot_info;
     // 初始化串口，用于早期调试输出
     lunar_kernel::init();
 
