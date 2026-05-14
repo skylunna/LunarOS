@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 // LunarOS - x86_64 启动初始化
 
-use x86_64::structures::idt::{InterruptDescriptorTable, InterruptStackFrame};
 use lazy_static::lazy_static;
+use x86_64::structures::idt::{InterruptDescriptorTable, InterruptStackFrame};
 
 lazy_static! {
     /// 中断描述符表（IDT）

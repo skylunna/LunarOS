@@ -2,8 +2,8 @@
 // LunarOS - 用 Rust 编写的开源操作系统内核
 // 版权所有 (c) 2024 LunarOS 贡献者
 
-#![no_std]   // 不链接 Rust 标准库
-#![no_main]  // 禁用所有 Rust 级别的入口点
+#![no_std] // 不链接 Rust 标准库
+#![no_main] // 禁用所有 Rust 级别的入口点
 
 use core::panic::PanicInfo;
 use lunar_kernel::serial_println;

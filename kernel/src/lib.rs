@@ -10,8 +10,8 @@
 
 use core::panic::PanicInfo;
 
-pub mod serial;
 pub mod arch;
+pub mod serial;
 
 /// 内核初始化入口
 ///
@@ -65,7 +65,7 @@ pub fn test_panic_handler(info: &PanicInfo) -> ! {
 #[repr(u32)]
 pub enum QemuExitCode {
     Success = 0x10,
-    Failed  = 0x11,
+    Failed = 0x11,
 }
 
 /// 通过 I/O 端口通知 QEMU 退出
