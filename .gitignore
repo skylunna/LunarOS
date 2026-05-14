@@ -1,0 +1,39 @@
+# Rust / Cargo
+/target/
+kernel/target/
+**/*.rs.bk
+Cargo.lock
+
+# 编译产物
+*.o
+*.a
+*.so
+*.d
+
+# OS 开发特有
+*.iso
+*.img
+*.bin
+*.elf
+*.map
+*.sym
+isodir/
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# 日志
+*.log
+
+# 环境变量
+.env
+.env.local
